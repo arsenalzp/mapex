@@ -52,15 +52,15 @@ class Mapex extends Map {
 		// check delta - if access time is lower than 1000 ms (1s) - don't decrease expiration time
 		if (delta < 1000) {
 			this._cache.set(key, { 'expires': expires, 'timeStamp': _currentTime, 'delta': delta });
-			const expiresTosec = Math.round(expires / 1000);
-			return expiresTosec
+			const expiresToSec = Math.round(expires / 1000);
+			return expiresToSec
 		}
 
 		// check delta - if access time is greater than 1000 ms (1s) - decrease expiration time
 		if (delta >= 1000) {
 			this._cache.set(key, { 'expires': expires - delta, 'timeStamp': _currentTime, 'delta': 0 });
-			const expiresTosec = Math.round((expires - delta) / 1000);
-			return expiresTosec
+			const expiresToSec = Math.round((expires - delta) / 1000);
+			return expiresToSec
 		}
 	}
 
