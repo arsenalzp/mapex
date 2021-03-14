@@ -18,8 +18,17 @@ You can retrieve TTL of the given key by using ttl(key) method.
 const Mapex = require('map-expires');
 const map = new Mapex();
 
-map.setex(key, time, value);
-map.ttl(key);
+map.setex('ONE', 5, 'ARG1');
+
+setTimeout(() => {
+  console.log('GET ONE ' + map.get('ONE'));
+  console.log('TTL ONE ' + map.ttl('ONE'));
+}, 3100)
+
+setTimeout(() => {
+  console.log('GET ONE ' + map.get('ONE'));
+  console.log('TTL ONE ' + map.ttl('ONE'));
+}, 4300)
 ```
 
 ### API
