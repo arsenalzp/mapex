@@ -20,8 +20,8 @@ class Mapex extends Map {
 	// get TTL by key
 	ttl(key) {
 		const ttlInMs = this._calcTll(key)
-		if (!ttlInMs) return -1
-		return ttlInMs
+		if (!Math.trunc(ttlInMs)) return -1
+		return Math.round(ttlInMs / 1000)
 	}
 
 	// get property by key
@@ -52,14 +52,13 @@ class Mapex extends Map {
 		// check delta - if access time is lower than 1000 ms (1s) - don't decrease expiration time
 		if (delta < 1000) {
 			this._cache.set(key, { 'expires': expires, 'timeStamp': _currentTime, 'delta': delta });
-			const expiresToSec = Math.round(expires / 1000);
-			return expiresToSec
+			return expires
 		}
 
 		// check delta - if access time is greater than 1000 ms (1s) - decrease expiration time
 		if (delta >= 1000) {
 			this._cache.set(key, { 'expires': expires - delta, 'timeStamp': _currentTime, 'delta': 0 });
-			const expiresToSec = Math.round((expires - delta) / 1000);
+			const expiresToSec = expires - delta;
 			return expiresToSec
 		}
 	}
