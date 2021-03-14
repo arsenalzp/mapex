@@ -21,13 +21,13 @@ const map = new Mapex();
 map.setex('ONE', 5, 'ARG1');
 
 setTimeout(() => {
-  console.log('GET ONE ' + map.get('ONE'));
-  console.log('TTL ONE ' + map.ttl('ONE'));
+  console.log(map.get('ONE')); // ARG1
+  console.log(map.ttl('ONE')); // 2
 }, 3100)
 
 setTimeout(() => {
-  console.log('GET ONE ' + map.get('ONE'));
-  console.log('TTL ONE ' + map.ttl('ONE'));
+  console.log(map.get('ONE')); // ARG1
+  console.log(map.ttl('ONE')); // 1
 }, 4300)
 ```
 
