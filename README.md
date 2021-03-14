@@ -21,14 +21,24 @@ const map = new Mapex();
 map.setex('ONE', 5, 'ARG1');
 
 setTimeout(() => {
-  console.log(map.get('ONE')); // ARG1
-  console.log(map.ttl('ONE')); // 2
-}, 3100)
+  console.log('GET ',map.get('ONE'));
+  console.log('TTL ', map.ttl('ONE'));
+}, 2100)
 
 setTimeout(() => {
-  console.log(map.get('ONE')); // ARG1
-  console.log(map.ttl('ONE')); // 1
-}, 4300)
+  console.log('GET ', map.get('ONE'));
+  console.log('TTL ', map.ttl('ONE'));
+}, 3300)
+
+setTimeout(() => {
+  console.log('GET ', map.get('ONE'));
+  console.log('TTL ', map.ttl('ONE'));
+}, 4400)
+
+setTimeout(() => {
+  console.log('GET ', map.get('ONE'));
+  console.log('TTL ', map.ttl('ONE'));
+}, 5000)
 ```
 
 ### API

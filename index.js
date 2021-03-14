@@ -27,7 +27,7 @@ class Mapex extends Map {
 	// get property by key
 	get(key) {
 		const ttlInMs = this._calcTll(key);
-		this._calcTll(key);
+		if (!ttlInMs) return undefined
 		return super.get(key);
 	}
 
