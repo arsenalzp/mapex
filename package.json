@@ -1,6 +1,6 @@
 {
   "name": "map-expires",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Set the value and expiration of a key for the Map by using Redis syntax.",
   "main": "index.js",
   "scripts": {

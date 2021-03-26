@@ -4,14 +4,19 @@ class Mapex extends Map {
 		this._cache = new Map(); // create internal cache to keep {key,expiration} object
 	}
 
+	delete(key) {
+		this._cache.delete(key);
+		return super.delete(key);
+	}
+	
 	// set expiration time in cache
-	setex() {
-		if (arguments[1] < 0 || typeof arguments[1] !== 'number') {
+	setex(key, expire, value) {
+		if (expire < 0 || typeof expire !== 'number') {
 			throw TypeError('Expires should be an abs number');
 		}
-		const _key = arguments[0];
-		const _expire = arguments[1] * 1000;
-		const _value = arguments[2];
+		const _key = key;
+		const _expire = expire * 1000;
+		const _value = value;
 		const _timeStamp = Date.now();
 		super.set(_key, _value);
 		this._cache.set(_key, {'expires': _expire, 'timeStamp': _timeStamp, 'delta': 0 });
