@@ -1,6 +1,6 @@
 {
   "name": "map-expires",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Set the value and expiration of a key for the Map by using Redis syntax.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arsenalzp/nodejs_mapex.git"
+    "url": "https://github.com/arsenalzp/mapex"
   },
   "keywords": [
     "Map",
@@ -20,7 +20,7 @@
   "author": "Aleksander arsenalzp.npm@gmail.com",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/arsenalzp/nodejs_mapex/issues"
+    "url": "https://github.com/arsenalzp/mapex/issues"
   },
-  "homepage": "https://github.com/arsenalzp/nodejs_mapex#readme"
+  "homepage": "https://github.com/arsenalzp/mapex#readme"
 }
