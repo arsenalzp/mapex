@@ -4,7 +4,7 @@ Set the value and expiration of a key for the Map by using Redis syntax.
 ## Installation
 
 ```bash
-npm install mapex
+npm install map-expires
 ```
 
 ## Usage
